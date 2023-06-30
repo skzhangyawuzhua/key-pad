@@ -1,0 +1,24 @@
+{
+  "name": "key-pad",
+  "version": "0.0.1",
+  "description": "webcomponent 的数字键盘",
+  "main": "index.js",
+  "scripts": {
+    "test": " rm -f ./test/index.js && node esbuild.js && cd ./test && http-server -p 5600",
+    "build": "export NODE_ENV=production && rm -rf ./dist && node esbuild.js"
+  },
+  "keywords": [
+    "keypad",
+    "numeric-keyboard",
+    "webcomponent"
+  ],
+  "author": "zywz",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.18.9",
+    "esbuild-plugin-sass": "^1.0.1",
+    "http-server": "^14.1.1",
+    "sass": "^1.63.6",
+    "typescript": "^5.1.3"
+  }
+}

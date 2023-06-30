@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>key-pad 示例</div>
+
+    <key-pad><div slot="keypad-content"></div></key-pad>
+
+    <button id="open_btn">弹出键盘</button>
+
+    <div>当前输入: <span id="keypad_val"></span></div>
+
+    <script src="./index.js"></script>
+
+    <script>
+      const keypad = document.querySelector("key-pad");
+
+      const open_btn = document.querySelector("#open_btn");
+
+      open_btn.addEventListener("click", () => keypad.show());
+
+      const callback = arg => {
+        const el = document.querySelector("#keypad_val");
+
+        el.innerHTML = arg;
+      };
+
+      keypad.callback = callback;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+.keyboard_container {
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 32px repeat(4, 1fr);
+  
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  
+    width: 100%;
+    height: 38vh;
+  
+    background-color: rgb(247, 247, 247);
+  
+    z-index: 99;
+  
+    --gap_px: 10px;
+  
+    padding: 0px var(--gap_px) var(--gap_px);
+    row-gap:  var(--gap_px);
+    column-gap: var(--gap_px);
+  
+    transition: all 0.4s linear;
+    transform-origin: bottom;
+}
+
+.close {
+    transform: rotate(180deg) scaleX(2.5);
+    grid-column: span 4;
+    font-size: 24px;
+    color: #aaaaaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.zero {
+    grid-column-start: span 2;
+}
+
+.confirm {
+    grid-row-start: span 3;
+    background-color: #f6a97a;
+    color: white;
+}
+
+.positive {
+    background-color: #ff6505;
+}
+
+.hide {
+    height: 0 !important;
+    bottom: -30px;
+}
+
+button {
+    box-sizing: border-box;
+    border:none;
+    border-radius: 8px;
+}
