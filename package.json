@@ -1,11 +1,12 @@
 {
-  "name": "key-pad",
-  "version": "0.0.1",
+  "name": "@zhangyawuzhua/key-pad",
+  "version": "0.0.2",
   "description": "webcomponent 的数字键盘",
   "main": "index.js",
   "scripts": {
     "test": " rm -f ./test/index.js && node esbuild.js && cd ./test && http-server -p 5600",
-    "build": "export NODE_ENV=production && rm -rf ./dist && node esbuild.js"
+    "build": "export NODE_ENV=production && rm -rf ./dist && node esbuild.js",
+    "publish": "npm publish --access public"
   },
   "keywords": [
     "keypad",
@@ -20,5 +21,9 @@
     "http-server": "^14.1.1",
     "sass": "^1.63.6",
     "typescript": "^5.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skzhangyawuzhua/keypad.git"
   }
 }
