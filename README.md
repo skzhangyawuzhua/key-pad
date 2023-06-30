@@ -4,14 +4,16 @@
 
 ### 使用方法
 
+    npm install @zhangyawuzhua/key-pad
+
 #### 原生:
 
 ```javascript
     <script>
       const keypad = document.querySelector("key-pad");
-    
+  
       const open_btn = document.querySelector("#open_btn");
-    
+  
       open_btn.addEventListener("click", () => keypad.show());
 
       // 挂在设置数值的回调函数到 keypad 实例上
@@ -19,7 +21,7 @@
         const el = document.querySelector("#keypad_val");
         el.innerHTML = arg;
       };
-    
+  
       keypad.callback = callback;
     </script>
 
