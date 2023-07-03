@@ -1,6 +1,6 @@
 {
   "name": "@zhangyawuzhua/key-pad",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "webcomponent 的数字键盘",
   "main": "index.js",
   "scripts": {
