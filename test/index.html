@@ -7,9 +7,9 @@
     <title>Document</title>
   </head>
   <body>
-    <div>key-pad 示例</div>
+    <div style="font-size: large; font-weight: 700">key-pad 示例</div>
 
-    <key-pad><div slot="keypad-content"></div></key-pad>
+    <key-pad></key-pad>
 
     <button id="open_btn">弹出键盘</button>
 
@@ -31,6 +31,8 @@
       };
 
       keypad.callback = callback;
+
+      keypad.show();
     </script>
   </body>
 </html>

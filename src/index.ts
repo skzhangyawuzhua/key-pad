@@ -3,63 +3,62 @@ import cssContent from "./index.css";
 
 const template = `
     <div id='keypad-template'>
-        // <slot name="keypad-content">keypad content</slot>
 
         <div class='keyboard_container hide'>
 
             <div class='close' id='close'>^</div>
 
-            <button data-val='1'>
+            <div class='btn' data-val='1'>
               1
-            </button>
+            </div>
     
-            <button data-val='2'>
+            <div class='btn' data-val='2'>
               2
-            </button>
+            </div>
     
-            <button data-val='3'>
+            <div class='btn' data-val='3'>
               3
-            </button>
+            </div>
     
-            <button data-val=undefined>
+            <div class='btn' data-val=undefined>
               删除
-            </button>
+            </div>
     
-            <button data-val='4'>
+            <div class='btn' data-val='4'>
               4
-            </button>
+            </div>
     
-            <button data-val='5'>
+            <div class='btn' data-val='5'>
               5
-            </button>
+            </div>
     
-            <button data-val='6'>
+            <div class='btn' data-val='6'>
               6
-            </button>
+            </div>
     
-            <button class='confirm'>
+            <div class='confirm btn '>
               确定
-            </button>
+            </div>
     
-            <button data-val='7'>
+            <div class='btn' data-val='7'>
               7
-            </button>
+            </div>
     
-            <button data-val='8'>
+            <div class='btn' data-val='8'>
               8
-            </button>
+            </div>
     
-            <button data-val='9'>
+            <div class='btn' data-val='9'>
               9
-            </button>
+            </div>
     
-            <button data-val='0' class="zero">
+            <div class='btn zero' data-val='0'>
               0
-            </button>
+            </div>
     
-            <button data-val='.'>
+            <div class='btn' data-val='.'>
               .
-            </button>
+            </div>
         </div>
     </div>
 `;
@@ -96,7 +95,7 @@ class Keypad extends HTMLElement {
 
     style.textContent = cssContent;
 
-    const btn_arr = wrap.querySelectorAll("button[data-val]");
+    const btn_arr = wrap.querySelectorAll("div[data-val]");
 
     btn_arr.forEach(button =>
       button.addEventListener("click", this.handleClick.bind(this))
