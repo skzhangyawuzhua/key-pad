@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": " rm -f ./test/index.js && node esbuild.js && cd ./test && http-server -p 5600",
-    "build": "export NODE_ENV=production && rm -rf ./dist && node esbuild.js"
+    "build": "export NODE_ENV=production && rm -rf ./dist && node esbuild.js",
+    "pub": "npm version patch && git push && npm publish"
   },
   "keywords": [
     "keypad",
