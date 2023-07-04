@@ -1,22 +1,25 @@
 # key-pad
 
 ### 基于 webcomponent 的数字键盘
+
     - 给予用户在移动端支付等场景下优于原生键盘的体验
     - 解决移动端在某些场景下，键盘无法弹起并自动聚焦的问题
 
 <img src='https://github.com/skzhangyawuzhua/key-pad/assets/44012317/162d8cd8-5fca-4c44-851f-6310c18b91ad' width='300px' />
 
-
 ### 使用方法
+
     npm install @zhangyawuzhua/key-pad
-    
+
 #### 类型声明
+
     interface KeypadProps {
       show: () => void;
       setCallback: (fn: (str: string) => void) => void;
     }
-    
+
 #### React示例
+
 ```typescript
     import "@zhangyawuzhua/key-pad";
     import { KeypadProps } from "@zhangyawuzhua/key-pad";
@@ -53,6 +56,7 @@
 ```
 
 #### Vue示例
+
 ```typescript
     <template>
       <button @click="show()">弹出键盘</button>
@@ -104,5 +108,3 @@
 
 
 ```
-
-![keypad1](https://github.com/skzhangyawuzhua/key-pad/assets/44012317/17992315-f566-49eb-8a81-497c3336f875)
