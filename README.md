@@ -4,6 +4,9 @@
     - 给予用户在移动端支付等场景下优于原生键盘的体验
     - 解决移动端在某些场景下，键盘无法弹起并自动聚焦的问题
 
+<img src='https://github.com/skzhangyawuzhua/key-pad/assets/44012317/162d8cd8-5fca-4c44-851f-6310c18b91ad' width='300px' />
+
+
 ### 使用方法
     npm install @zhangyawuzhua/key-pad
     
