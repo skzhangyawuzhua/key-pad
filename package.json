@@ -2,7 +2,8 @@
   "name": "@zhangyawuzhua/key-pad",
   "version": "0.0.6",
   "description": "webcomponent 的数字键盘",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/types.d.ts",
   "scripts": {
     "test": " rm -f ./test/index.js && node esbuild.js && cd ./test && http-server -p 5600",
     "build": "export NODE_ENV=production && rm -rf ./dist && node esbuild.js",

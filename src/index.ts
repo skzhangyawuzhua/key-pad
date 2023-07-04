@@ -167,11 +167,8 @@ class Keypad extends HTMLElement {
     this.keyboard_container?.classList.remove("hide");
   }
 
-  //使用 Proxy?
   setCallback(fn: (str: string) => void) {
-    console.log("setCallback");
-
-    // fn();
+    this.callback = fn;
   }
 }
 

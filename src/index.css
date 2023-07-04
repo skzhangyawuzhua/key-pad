@@ -1,6 +1,6 @@
 .keyboard_container {
     --c: #f6a97a;
-
+    color: #666666;
     box-sizing: border-box;
 
     display: grid;
