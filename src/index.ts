@@ -2,9 +2,8 @@
 import cssContent from "./index.css";
 
 const template = `
-    <div id='keypad-template'>
 
-        <div class='keyboard_container hide'>
+        <div class='keyboard_container hide' id='keypad-template'>
 
             <div class='close' id='close'>^</div>
 
@@ -60,7 +59,6 @@ const template = `
               .
             </div>
         </div>
-    </div>
 `;
 
 class Keypad extends HTMLElement {
@@ -73,25 +71,19 @@ class Keypad extends HTMLElement {
 
     const shadowRoot = this.attachShadow({ mode: "open" });
 
-    const wrap = document.createElement("div");
-
     const style = document.createElement("style");
 
     const parser = new DOMParser();
 
-    const el = parser
+    const wrap = parser
       .parseFromString(template, "text/html")
-      .querySelector("#keypad-template");
+      .querySelector("#keypad-template") as HTMLElement;
 
-    if (!el) {
+    if (!wrap) {
       return;
     }
 
-    wrap.appendChild(el.cloneNode(true));
-
-    this.keyboard_container = wrap.querySelector<HTMLElement>(
-      ".keyboard_container"
-    );
+    this.keyboard_container = wrap;
 
     style.textContent = cssContent;
 
@@ -106,8 +98,6 @@ class Keypad extends HTMLElement {
     this.hide = this.hide.bind(this);
 
     this.show = this.show.bind(this);
-
-    // this.solve = this.solve.bind(this);
 
     close_btn?.addEventListener("click", this.hide);
 

@@ -1,4 +1,4 @@
-var r=`.keyboard_container {
+var n=`.keyboard_container {
     --c: #f6a97a;
     color: #666666;
     box-sizing: border-box;
@@ -72,8 +72,7 @@ var r=`.keyboard_container {
 }
 
 .hide {
-    height: 0 !important;
-    bottom: -30px;
+    transform: scaleY(0.1) translateY(38vh);
 }
 
 .btn{
@@ -99,10 +98,9 @@ var r=`.keyboard_container {
 
 .btn:active::after{
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
-}`;var l=`
-    <div id='keypad-template'>
+}`;var d=`
 
-        <div class='keyboard_container hide'>
+        <div class='keyboard_container hide' id='keypad-template'>
 
             <div class='close' id='close'>^</div>
 
@@ -158,5 +156,4 @@ var r=`.keyboard_container {
               .
             </div>
         </div>
-    </div>
-`,a=class extends HTMLElement{constructor(){super();this.keyboard_container=null;this.current_val="";this.callback=null;let e=this.attachShadow({mode:"open"}),t=document.createElement("div"),i=document.createElement("style"),n=new DOMParser().parseFromString(l,"text/html").querySelector("#keypad-template");if(!n)return;t.appendChild(n.cloneNode(!0)),this.keyboard_container=t.querySelector(".keyboard_container"),i.textContent=r,t.querySelectorAll("div[data-val]").forEach(s=>s.addEventListener("click",this.handleClick.bind(this)));let o=t.querySelector("#close");this.hide=this.hide.bind(this),this.show=this.show.bind(this),o?.addEventListener("click",this.hide),t.querySelector(".confirm")?.addEventListener("click",this.hide),e.appendChild(i),e.appendChild(t)}handleClick(e){if(!e.target)return;let t=e.target.dataset.val;this.current_val=this.solve(t),this.callback&&this.callback(this.current_val)}solve(e){let t=this.current_val;return!e||e==="undefined"?(t=t.substring(0,t.length-1),t):(t.length>10||e==="."&&(t.indexOf(".")!==-1||!t)||(t+=e),t)}handleConfirm(){console.log("confirm")}hide(){console.log("hide ",this),this.keyboard_container?.classList.add("hide")}show(){this.keyboard_container?.classList.remove("hide")}setCallback(e){this.callback=e}};customElements.define("key-pad",a);
+`,i=class extends HTMLElement{constructor(){super();this.keyboard_container=null;this.current_val="";this.callback=null;let a=this.attachShadow({mode:"open"}),t=document.createElement("style"),e=new DOMParser().parseFromString(d,"text/html").querySelector("#keypad-template");if(!e)return;this.keyboard_container=e,t.textContent=n,e.querySelectorAll("div[data-val]").forEach(r=>r.addEventListener("click",this.handleClick.bind(this)));let s=e.querySelector("#close");this.hide=this.hide.bind(this),this.show=this.show.bind(this),s?.addEventListener("click",this.hide),e.querySelector(".confirm")?.addEventListener("click",this.hide),a.appendChild(t),a.appendChild(e)}handleClick(a){if(!a.target)return;let t=a.target.dataset.val;this.current_val=this.solve(t),this.callback&&this.callback(this.current_val)}solve(a){let t=this.current_val;return!a||a==="undefined"?(t=t.substring(0,t.length-1),t):(t.length>10||a==="."&&(t.indexOf(".")!==-1||!t)||(t+=a),t)}handleConfirm(){console.log("confirm")}hide(){console.log("hide ",this),this.keyboard_container?.classList.add("hide")}show(){this.keyboard_container?.classList.remove("hide")}setCallback(a){this.callback=a}};customElements.define("key-pad",i);

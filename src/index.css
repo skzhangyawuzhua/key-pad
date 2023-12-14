@@ -72,8 +72,7 @@
 }
 
 .hide {
-    height: 0 !important;
-    bottom: -30px;
+    transform: scaleY(0.1) translateY(38vh);
 }
 
 .btn{
